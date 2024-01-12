@@ -233,6 +233,28 @@ button:focus-visible {
   }
 }
 
+
+/*CTA*/
+.cta {
+  position: relative;
+  /*to keep text but put background color behind cta:before. Isolate allows to stack elements context*/
+  isolation: isolate;
+  text-align: center;
+}
+/*need to use :before or :after so we can lower the opacity of svg*/
+.cta:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: url(./images/bg-tablet-pattern.svg),
+  url(./images/bg-tablet-pattern.svg)
+  ;
+  opacity: .1;
+  background-repeat: no-repeat;
+  background-position: -1em -4em, 70rem -40rem;
+}
+
 /* UTILITY CLASSES*/
 
 /* at the bottom so they override all other styles*/
@@ -257,23 +279,36 @@ button:focus-visible {
   width: min(var(--max-width), 100% - (var(--padding) * 2));
   margin-inline: auto;
 }
-/* where - to lower specificity. :not(:first-child) - sellect all but not first child*/
-:where(.flow :not(:first-child)) {
-  /*--flow-spacer not defined, but if need to use in other places is usefull*/
-  margin-top: var(--flow-spacer, 3em);
-}
 .even-columns {
   display: grid;
   gap: 1rem;
 }
-
+.vertical-align-center {
+  align-items: center;
+}
+.justfy-self-end {
+  justify-self: center;
+}
 /* Em is more consistent througthout all browser support. Em or Rem here looking at broser setings. */
 @media (min-width: 50em) {
   .even-columns {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
   }
+  .justfy-self-end {
+    justify-self: end;
+  }
 }
+
+
+
+
+/* where - to lower specificity. :not(:first-child) - sellect all but not first child*/
+:where(.flow :not(:first-child)) {
+  /*--flow-spacer not defined, but if need to use in other places is usefull*/
+  margin-top: var(--flow-spacer, 3em);
+}
+
 .text-primary-400 {
   color: var(--clr-primary-400-Blue);
 }
