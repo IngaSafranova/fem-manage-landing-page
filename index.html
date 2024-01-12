@@ -13,10 +13,15 @@
   <body>
     <header class="primary-header">
 <div class="container">
+  <div class="nav-wrapper">
   <a href="#"><img src="./images/logo.svg" alt="Manage" ></a>
+  <button class="mobile-nav-togle" aria-controls="primary-navigation" aria-expanded="false">
+    <img class="icon-hamburger" src="./images/icon-hamburger.svg" alt="" aria-hidden="true">
+    <img class="icon-close" src="./images/icon-close.svg" alt="" aria-hidden="true">
+    <span class="sr-only">Menu</span></button>
   <nav class="primary-navigation">
     <!-- have role attribute as some readers may not announce it is a list if list styling is removed -->
-    <ul aria-label="primary" role="list" class="nav-list">
+    <ul  id="primary-navigation" aria-label="primary" role="list" class="nav-list">
       <li><a href="#">Pricing</a></li>
       <li><a href="#">Product</a></li>
       <li><a href="#">About Us</a></li>
@@ -26,11 +31,12 @@
 
 
   </nav>
-  <button class="button">Get Started</button>
+  <button class="button" style="display: none;">Get Started</button>
 </div>
-    </header>
+</div>
+    </header> 
     <main>
-      <section>
+      <section class="padding-block-900">
         <div class="container">
           <div class="even-columns">
             <div>
@@ -44,11 +50,11 @@
           </div>
         </div>
       </section>
-      <section>
+      <section class="padding-block-900">
         <div class="container">
           <div class="even-columns">
             <div>
-              <h2 class="secondary-heading fw-bold">What’s different about Manage?</h2>
+              <h2 class="fs-secondary-heading fw-bold">What’s different about Manage?</h2>
               <p>Manage provides all the functionality your team needs, without the complexity. Our software is tailor-made for modern digital product teams.</p>
 
             </div>
@@ -65,12 +71,12 @@
           </div>
         </div>
       </section>
-      <section class="carousel">
-        <h2 class="secondary-heading">What they’ve said</h2>
+      <section class="carousel | padding-block-700">
+        <h2 class="fs-secondary-heading fw-bold">What they’ve said</h2>
         <!-- Carousel here -->
         <button class="button">Get Started</button>
       </section>
-      <section class="cta | bg-accent-400 text-neutral-900">
+      <section class="cta | padding-block-700 bg-accent-400 text-neutral-900">
 <div class="container">
   <div class="even-columns">
     <div><p class="fs-secondary-heading fw-bold"> Simplify how your team works today.</p></div>
@@ -82,7 +88,7 @@
 </div>
       </section>
     </main>
-   <footer class="bg-neutral-100 text-neutral-900">
+   <footer class="padding-block-700 bg-neutral-100 text-neutral-900">
     <div class="container">
        <div class="even-columns">
 <div>
