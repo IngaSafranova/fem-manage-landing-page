@@ -86,16 +86,7 @@ html,
 body {
   height: 100%;
 }
-/* Set core body defaults */
-body {
-  bg-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  bg-decoration-skip-ink: auto;
-}
 /* Make images easier to work with */
 img,
 picture,
@@ -232,8 +223,41 @@ button:focus-visible {
     display: none;
   }
 }
+/* FOOTER*/
 
+/*to set logo color need to set variable in svg file*/
+.footer-navigation  {
+  --logo-color:var(--clr-neutral-900-lightGray)
+}
+/* FOOTER NAVIGATION*/
 
+.footer-nav {
+  columns: 2;
+}
+.footer-nav a {
+  color: var(--clr-neutral-900-lightGray);
+  text-decoration: none;
+}
+.footer-nav a:is(:hover, :focus) {
+  color: var(--clr-accent-400-brRed);
+}
+
+/* SOCIAL LIST*/
+
+.social-list {
+  display: flex;
+  gap: var(--size-600);
+}
+
+/* to use fill with our colors - need to remove it from svg file*/
+.social-icon {
+  width: var(--size-600);
+  aspect-ratio: 1;
+  fill: var(--clr-neutral-900-lightGray);
+}
+.social-list a:is(:hover, :focus) .social-icon {
+  fill: var(--clr-accent-400-brRed);
+}
 /*CTA*/
 .cta {
   position: relative;
@@ -243,18 +267,21 @@ button:focus-visible {
 }
 /*need to use :before or :after so we can lower the opacity of svg*/
 .cta:before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   inset: 0;
   background-image: url(./images/bg-tablet-pattern.svg),
-  url(./images/bg-tablet-pattern.svg)
-  ;
-  opacity: .1;
+    url(./images/bg-tablet-pattern.svg);
+  opacity: 0.1;
   background-repeat: no-repeat;
   background-position: -1em -4em, 70rem -40rem;
 }
-
+/* .text-center {
+  width: 10ch;
+  text-align: center;
+  padding-left: var(--size-600);
+} */
 /* UTILITY CLASSES*/
 
 /* at the bottom so they override all other styles*/
@@ -298,10 +325,18 @@ button:focus-visible {
   .justfy-self-end {
     justify-self: end;
   }
+  .cta {
+    text-align: left;
+  }
+  .social-list {
+    display: flex;
+    gap: var(--size-200);
+  }
+  
+  .social-icon {
+    width: var(--size-500);
+  }
 }
-
-
-
 
 /* where - to lower specificity. :not(:first-child) - sellect all but not first child*/
 :where(.flow :not(:first-child)) {
