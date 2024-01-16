@@ -141,7 +141,10 @@ p[data-width="wide"] {
   background-color: var(--clr-accent-400-brRed);
   box-shadow: 0 1.125em 1em -1em var(--clr-accent-500-brRed);
 }
-
+.btn-form
+{
+box-shadow: none;
+}
 .btn-white {
   background-color: var(--clr-neutral-900-lightGray);
   color: var(--clr-accent-400-brRed);
@@ -154,6 +157,11 @@ button:focus-visible {
 .btn-white:focus-visible {
   color: var(--clr-accent-300-Red);
   background-color: var(--clr-neutral-900-lightGray);
+}
+
+.input {
+  border-radius: 20px;
+  padding: var(--size-200);
 }
 /* NAVIGATION*/
 .primary-header {
@@ -229,6 +237,38 @@ button:focus-visible {
 .footer-navigation  {
   --logo-color:var(--clr-neutral-900-lightGray)
 }
+.footer-wrapper {
+
+  display: grid;
+  gap: var(--size-700);
+  grid-template-areas: 
+  "form"
+  "nav"
+  "social-logo";
+}
+.footer-wrapper-social-logo{
+  grid-area: social-logo;
+  place-self: center;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--size-700);
+  align-items: center;
+}
+
+.footer-wrapper-nav{
+grid-area: nav;
+place-self: center;
+}
+
+.footer-wrapper-form{
+  grid-area: form;
+  place-self: center;
+}
+@media (max-width: 50em){
+  .primary-footer > * {
+    margin-inline: auto;
+  }
+}
 /* FOOTER NAVIGATION*/
 
 .footer-nav {
@@ -257,6 +297,16 @@ button:focus-visible {
 }
 .social-list a:is(:hover, :focus) .social-icon {
   fill: var(--clr-accent-400-brRed);
+}
+.copyright {
+  text-align: center;
+  font-size: var(--fs-300);
+  padding-top: var(--size-700);
+  padding-bottom: var(--size-100);
+}
+.author {
+  text-align: center;
+  font-size: var(--fs-300);
 }
 /*CTA*/
 .cta {
@@ -316,6 +366,10 @@ button:focus-visible {
 .justfy-self-end {
   justify-self: center;
 }
+.flex {
+  display: flex;
+  gap:.5rem;
+}
 /* Em is more consistent througthout all browser support. Em or Rem here looking at broser setings. */
 @media (min-width: 50em) {
   .even-columns {
@@ -335,6 +389,36 @@ button:focus-visible {
   
   .social-icon {
     width: var(--size-500);
+  }
+  .footer-wrapper {
+    display: grid;
+    grid-template-areas:
+    "social-logo nav form";
+
+  }
+  .footer-wrapper-social-logo {
+    grid-area: social-logo;
+    flex-direction: column;
+    gap: var(--size-900);
+    place-self: start;
+
+  }
+  .footer-wrapper-nav {
+    grid-area: nav;
+}
+.footer-nav {
+  columns: 2;
+  gap:max(14vw, 3rem);
+}
+  .footer-wrapper-form {
+    grid-area: form;
+    
+  }
+  .copyright {
+    text-align: end;
+  }
+  .author {
+    text-align: end;
   }
 }
 

@@ -158,8 +158,8 @@
       class="footer-navigation | padding-block-700 bg-neutral-100 text-neutral-900"
     >
       <div class="container">
-        <div class="even-columns">
-          <div>
+        <div class="footer-wrapper">
+          <div class=" footer-wrapper-social-logo">
             <a href="#"
               ><svg class="icon"width="146" height="24">
                 <use xlink:href="./images/social-icons.svg#logo"></use></svg
@@ -207,7 +207,7 @@
               </li>
             </ul>
           </div>
-          <div>
+          <div class="footer-wrapper-nav">
             <nav class="footer-nav">
               <!-- if nav not the same as at the beginning both needs aria labels -->
               <ul
@@ -226,14 +226,18 @@
               </ul>
             </nav>
           </div>
-          <div>
-            <form action="">
-              <input type="email" placeholder=" Updates in your inbox… " />
-              <button class="button">Go</button>
+          <div class="footer-wrapper-form">
+            <form action="" class="flex">
+              <input class="input" type="email" placeholder=" Updates in your inbox… " />
+              <button class="button | btn-form">Go</button>
             </form>
-            <p>Go Copyright 2020. All Rights Reserved</p>
+           
           </div>
+          
         </div>
+        <p class="copyright"> Copyright 2020. All Rights Reserved</p>
+        <p class="author">Challenge by  <a href="https://www.frontendmentor.io">Frontend
+          Mentor</a>. Coded by I.S.</p>
       </div>
     </footer>
     <script type="module" src="/main.js"></script>
@@ -246,7 +250,6 @@
     provide structure and process. It keeps us organized and focused. I can’t
     stop recommending them to everyone I talk to!” Shanai Gough “Their software
     allows us to track, manage and collaborate on our projects from anywhere. It
-    keeps the whole team in-sync without being intrusive.” Challenge by Frontend
-    Mentor. Coded by Your Name Here.
+    keeps the whole team in-sync without being intrusive.” 
   </body>
 </html>
