@@ -86,16 +86,7 @@ html,
 body {
   height: 100%;
 }
-/* Set core body defaults */
-body {
-  bg-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  bg-decoration-skip-ink: auto;
-}
 /* Make images easier to work with */
 img,
 picture,
@@ -150,7 +141,10 @@ p[data-width="wide"] {
   background-color: var(--clr-accent-400-brRed);
   box-shadow: 0 1.125em 1em -1em var(--clr-accent-500-brRed);
 }
-
+.btn-form
+{
+box-shadow: none;
+}
 .btn-white {
   background-color: var(--clr-neutral-900-lightGray);
   color: var(--clr-accent-400-brRed);
@@ -163,6 +157,11 @@ button:focus-visible {
 .btn-white:focus-visible {
   color: var(--clr-accent-300-Red);
   background-color: var(--clr-neutral-900-lightGray);
+}
+
+.input {
+  border-radius: 20px;
+  padding: var(--size-200);
 }
 /* NAVIGATION*/
 .primary-header {
@@ -232,8 +231,83 @@ button:focus-visible {
     display: none;
   }
 }
+/* FOOTER*/
 
+/*to set logo color need to set variable in svg file*/
+.footer-navigation  {
+  --logo-color:var(--clr-neutral-900-lightGray)
+}
+.footer-wrapper {
 
+  display: grid;
+  gap: var(--size-700);
+  grid-template-areas: 
+  "form"
+  "nav"
+  "social-logo";
+}
+.footer-wrapper-social-logo{
+  grid-area: social-logo;
+  place-self: center;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--size-700);
+  align-items: center;
+}
+
+.footer-wrapper-nav{
+grid-area: nav;
+place-self: center;
+}
+
+.footer-wrapper-form{
+  grid-area: form;
+  place-self: center;
+}
+@media (max-width: 50em){
+  .primary-footer > * {
+    margin-inline: auto;
+  }
+}
+/* FOOTER NAVIGATION*/
+
+.footer-nav {
+  columns: 2;
+}
+.footer-nav a {
+  color: var(--clr-neutral-900-lightGray);
+  text-decoration: none;
+}
+.footer-nav a:is(:hover, :focus) {
+  color: var(--clr-accent-400-brRed);
+}
+
+/* SOCIAL LIST*/
+
+.social-list {
+  display: flex;
+  gap: var(--size-600);
+}
+
+/* to use fill with our colors - need to remove it from svg file*/
+.social-icon {
+  width: var(--size-600);
+  aspect-ratio: 1;
+  fill: var(--clr-neutral-900-lightGray);
+}
+.social-list a:is(:hover, :focus) .social-icon {
+  fill: var(--clr-accent-400-brRed);
+}
+.copyright {
+  text-align: center;
+  font-size: var(--fs-300);
+  padding-top: var(--size-700);
+  padding-bottom: var(--size-100);
+}
+.author {
+  text-align: center;
+  font-size: var(--fs-300);
+}
 /*CTA*/
 .cta {
   position: relative;
@@ -243,18 +317,21 @@ button:focus-visible {
 }
 /*need to use :before or :after so we can lower the opacity of svg*/
 .cta:before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   inset: 0;
   background-image: url(./images/bg-tablet-pattern.svg),
-  url(./images/bg-tablet-pattern.svg)
-  ;
-  opacity: .1;
+    url(./images/bg-tablet-pattern.svg);
+  opacity: 0.1;
   background-repeat: no-repeat;
   background-position: -1em -4em, 70rem -40rem;
 }
-
+/* .text-center {
+  width: 10ch;
+  text-align: center;
+  padding-left: var(--size-600);
+} */
 /* UTILITY CLASSES*/
 
 /* at the bottom so they override all other styles*/
@@ -289,6 +366,10 @@ button:focus-visible {
 .justfy-self-end {
   justify-self: center;
 }
+.flex {
+  display: flex;
+  gap:.5rem;
+}
 /* Em is more consistent througthout all browser support. Em or Rem here looking at broser setings. */
 @media (min-width: 50em) {
   .even-columns {
@@ -298,10 +379,48 @@ button:focus-visible {
   .justfy-self-end {
     justify-self: end;
   }
+  .cta {
+    text-align: left;
+  }
+  .social-list {
+    display: flex;
+    gap: var(--size-200);
+  }
+  
+  .social-icon {
+    width: var(--size-500);
+  }
+  .footer-wrapper {
+    display: grid;
+    grid-template-areas:
+    "social-logo nav form";
+
+  }
+  .footer-wrapper-social-logo {
+    grid-area: social-logo;
+    flex-direction: column;
+    gap: var(--size-900);
+    place-self: start;
+
+  }
+  .footer-wrapper-nav {
+    grid-area: nav;
 }
-
-
-
+.footer-nav {
+  columns: 2;
+  gap:max(14vw, 3rem);
+}
+  .footer-wrapper-form {
+    grid-area: form;
+    
+  }
+  .copyright {
+    text-align: end;
+  }
+  .author {
+    text-align: end;
+  }
+}
 
 /* where - to lower specificity. :not(:first-child) - sellect all but not first child*/
 :where(.flow :not(:first-child)) {
