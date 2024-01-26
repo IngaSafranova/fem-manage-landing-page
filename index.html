@@ -11,7 +11,9 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Vite App</title>
+    <link rel="stylesheet" href="https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css" />
+    <script src="https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js" defer ></script>
+    <title> fem Landing page</title>
   </head>
   <body>
     <header class="primary-header">
@@ -95,8 +97,10 @@
               <ul class="numbered-items | flow" role="list">
                 <li>
                   <div class="flow" style="--flow-spacer: 1em">
-                    <h3 class="fs-600 fw-bold">Track company-wide progress</h3>
-                    <p data-width="wide">
+                    <h3 class="numbered-items__title | fs-600 fw-bold">
+                      Track company-wide progress
+                    </h3>
+                    <p class="numbered-items__body" data-width="wide">
                       See how your day-to-day tasks fit into the wider vision.
                       Go from tracking progress at the milestone level all the
                       way done to the smallest of details. Never lose sight of
@@ -104,11 +108,12 @@
                     </p>
                   </div>
                 </li>
-
                 <li>
                   <div class="flow" style="--flow-spacer: 1em">
-                    <h3 class="fs-600 fw-bold">Advanced built-in reports</h3>
-                    <p data-width="wide">
+                    <h3 class="numbered-items__title | fs-600 fw-bold">
+                      Advanced built-in reports
+                    </h3>
+                    <p class="numbered-items__body" data-width="wide">
                       Set internal delivery estimates and track progress toward
                       company goals. Our customisable dashboard helps you build
                       out the reports you need to keep key stakeholders
@@ -116,13 +121,12 @@
                     </p>
                   </div>
                 </li>
-
                 <li>
                   <div class="flow" style="--flow-spacer: 1em">
-                    <h3 class="fs-600 fw-bold">
+                    <h3 class="numbered-items__title | fs-600 fw-bold">
                       Everything you need in one place
                     </h3>
-                    <p data-width="wide">
+                    <p class="numbered-items__body" data-width="wide">
                       Stop jumping from one service to another to communicate,
                       store files, track tasks and share documents. Manage
                       offers an all-in-one team productivity solution.
@@ -134,9 +138,48 @@
           </div>
         </div>
       </section>
-      <section class="carousel | padding-block-700">
+      <section class="carousel | padding-block-700 text-center">
         <h2 class="fs-secondary-heading fw-bold">What they’ve said</h2>
-        <!-- Carousel here -->
+        <!-- Carousel here  from A11Yslider.js.org-->
+        <ul class="slider">
+          <li>
+            <img src="./images/avatar-anisha.png" alt="">
+            <h3 class="fw-bold"> Anisha Li</h3>
+            <p data-width="wide">
+              “Manage has supercharged our team’s workflow. The ability
+    to maintain visibility on larger milestones at all times keeps everyone
+    motivated.” 
+            </p>
+          </li>
+          <li>
+            <img src="./images/avatar-ali.png" alt="">
+           <h3 class="fw-bold">Ali Bravo</h3>
+           <p data-width="wide">
+            “We have been able to cancel so many other
+            subscriptions since using Manage. There is no more cross-channel confusion
+            and everyone is much more focused.”
+          </p>
+          </li>
+         
+          <li>
+            <img src="./images/avatar-richard.png" alt="">
+            <h3 class="fw-bold"> Richard Watts </h3>
+            <p data-width="wide">
+              “Manage allows us to
+              provide structure and process. It keeps us organized and focused. I can’t
+              stop recommending them to everyone I talk to!”
+            </p>
+          </li>
+          <li>
+            <img src="./images/avatar-shanai.png" alt="">
+            <h3 class="fw-bold"> Shanai Gough</h3>
+            <p data-width="wide">
+              “Their software
+              allows us to track, manage and collaborate on our projects from anywhere. It
+              keeps the whole team in-sync without being intrusive.”
+            </p>
+          </li>
+        </ul>
         <button class="button">Get Started</button>
       </section>
       <section class="cta | padding-block-900 bg-accent-400 text-neutral-900">
@@ -159,9 +202,9 @@
     >
       <div class="container">
         <div class="footer-wrapper">
-          <div class=" footer-wrapper-social-logo">
+          <div class="footer-wrapper-social-logo">
             <a href="#"
-              ><svg class="icon"width="146" height="24">
+              ><svg class="icon" width="146" height="24">
                 <use xlink:href="./images/social-icons.svg#logo"></use></svg
             ></a>
             <ul class="social-list" role="list" aria-label="Social links">
@@ -228,28 +271,26 @@
           </div>
           <div class="footer-wrapper-form">
             <form action="" class="flex">
-              <input class="input" type="email" placeholder=" Updates in your inbox… " />
+              <input
+                class="input"
+                type="email"
+                placeholder=" Updates in your inbox… "
+              />
               <button class="button | btn-form">Go</button>
             </form>
-           
           </div>
-          
         </div>
-        <p class="copyright"> Copyright 2020. All Rights Reserved</p>
-        <p class="author">Challenge by  <a href="https://www.frontendmentor.io">Frontend
-          Mentor</a>. Coded by I.S.</p>
+        <p class="copyright">Copyright 2020. All Rights Reserved</p>
+        <p class="author">
+          Challenge by
+          <a href="https://www.frontendmentor.io">Frontend Mentor</a>. Coded by
+          I.S.
+        </p>
       </div>
     </footer>
     <script type="module" src="/main.js"></script>
 
-    01 02 03 Anisha Li “Manage has supercharged our team’s workflow. The ability
-    to maintain visibility on larger milestones at all times keeps everyone
-    motivated.” Ali Bravo “We have been able to cancel so many other
-    subscriptions since using Manage. There is no more cross-channel confusion
-    and everyone is much more focused.” Richard Watts “Manage allows us to
-    provide structure and process. It keeps us organized and focused. I can’t
-    stop recommending them to everyone I talk to!” Shanai Gough “Their software
-    allows us to track, manage and collaborate on our projects from anywhere. It
-    keeps the whole team in-sync without being intrusive.” 
+    
+       
   </body>
 </html>
