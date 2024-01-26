@@ -123,7 +123,7 @@ p:not([class]) {
   max-width: 32ch;
 }
 p[data-width="wide"] {
-  max-width: 32ch;
+  max-width: 40ch;
 }
 /* C0MPONENTS*/
 
@@ -393,6 +393,34 @@ button:focus-visible {
   }
 }
 
+/* Slider */
+/* Imported from A11Y webpage*/
+
+
+.slider {
+  display: flex;
+  list-style: none;
+  gap: var(--size-600);
+}
+
+.slider > * {
+  position: relative;
+  width: 450px;
+  flex: 0 0 auto;
+  padding: var(--size-800)  var(--size-600) var(--size-600) var(--size-600) ;
+  background-color: var(--clr-neutral-900-lightGray);
+  border-radius: var(--size-100);
+}
+
+.slider img {
+  width: var(--size-800);
+  position: absolute;
+  inset: 0;
+  margin-inline: auto;
+  top:0;
+  transform: translateY(-50%);
+}
+
 /* UTILITY CLASSES*/
 
 /* at the bottom so they override all other styles*/
@@ -556,7 +584,10 @@ button:focus-visible {
 .padding-block-700 {
   padding-block: var(--size-700);
 }
-
+.text-center {
+  text-align: center;
+  
+}
 /* to hide button on small screen*/
 .display-sm-none {
   display: none;
