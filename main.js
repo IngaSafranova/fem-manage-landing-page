@@ -11,6 +11,13 @@ navToggle.addEventListener('click', ()=>{
 
 })
 const slider = new A11YSlider(document.querySelector('.slider'), {
-    adaptiveHeight: true,
-    dots: false
+    adaptiveHeight: false,
+    dots: true,
+    arrows: false,
+    responsive: {
+        480: {
+            dots: false, //dots disapper at 480px and up
+            arrows: false
+        }
+    }
   });
