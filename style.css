@@ -193,15 +193,14 @@ button:focus-visible {
   .primary-header[data-overlay] {
     position: relative;
     z-index: 10;
-   
   }
   .primary-navigation {
     display: none;
 
-width: 90%;
+    width: 90%;
 
     position: fixed;
-margin-inline: auto;
+    margin-inline: auto;
     padding: var(--size-700);
     inset: 7rem var(--size-400) auto;
     background-color: var(--clr-neutral-900-lightGray);
@@ -212,13 +211,13 @@ margin-inline: auto;
     content: "";
     position: fixed;
 
-min-height: 100vh;
-min-width: 100vw;
-left: 0;
-inset: 0 ;
-background-image: linear-gradient(rgb(0 0 0 /0), rgb(0 0 0 /0.8));
-  background-size: 100%;
-  background-position: left;
+    min-height: 100vh;
+    min-width: 100vw;
+    left: 0;
+    inset: 0;
+    background-image: linear-gradient(rgb(0 0 0 /0), rgb(0 0 0 /0.8));
+    background-size: 100%;
+    background-position: left;
   }
   .nav-list {
     display: grid;
@@ -239,19 +238,19 @@ background-image: linear-gradient(rgb(0 0 0 /0), rgb(0 0 0 /0.8));
     cursor: pointer;
     background-color: transparent;
     background-image: url(./images/icon-hamburger.svg);
-background-size: contain;
-   background-repeat: no-repeat;
-   background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     border: 0;
     padding: 0.5rem;
     width: 2rem;
     aspect-ratio: 1;
   }
-  .mobile-nav-togle[aria-expanded = 'true']{
+  .mobile-nav-togle[aria-expanded="true"] {
     background-image: url(./images/icon-close.svg);
     background-repeat: no-repeat;
   }
-  
+
   .mobile-nav-togle .icon-close {
     display: none;
   }
@@ -263,7 +262,6 @@ background-size: contain;
   --logo-color: var(--clr-neutral-900-lightGray);
 }
 .footer-wrapper {
-  
   display: grid;
   gap: var(--size-700);
   grid-template-areas:
@@ -288,13 +286,11 @@ background-size: contain;
 .footer-wrapper-form {
   grid-area: form;
   place-self: center;
-  
 }
-@media (min-width: 47em){
-  .footer-wrapper-form 
-{
-  align-self: self-start;
-}  
+@media (min-width: 47em) {
+  .footer-wrapper-form {
+    align-self: self-start;
+  }
 }
 @media (max-width: 47em) {
   .primary-footer > * {
@@ -345,8 +341,8 @@ background-size: contain;
   position: relative;
   /*to keep text but put background color behind cta:before. Isolate allows to stack elements context*/
   isolation: isolate;
-   text-align:center;
-   margin-top:var(--size-900); 
+  text-align: center;
+  margin-top: var(--size-900);
 }
 /*need to use :before or :after so we can lower the opacity of svg*/
 .cta:before {
@@ -354,16 +350,15 @@ background-size: contain;
   position: absolute;
   z-index: -1;
   inset: 0;
-  background-image: 
-    url(./images/bg-tablet-pattern.svg);
+  background-image: url(./images/bg-tablet-pattern.svg);
   opacity: 0.1;
   background-repeat: no-repeat;
   background-position: top right;
   left: 0;
-  bottom:0;
+  bottom: 0;
   right: 70%;
 }
-@media (min-width: 30em){
+@media (min-width: 30em) {
   .cta:before {
     content: "";
     position: absolute;
@@ -533,98 +528,86 @@ background-size: contain;
   .background-image {
     order: -1;
   }
-  
 }
 .background-image::before {
-  content:'';
+  content: "";
   position: absolute;
   background-image: url(./images/bg-tablet-pattern.svg);
 
-  background-position: 4em bottom ;
-  background-repeat: no-repeat;
-   background-size: 120%; 
-   width: 99%; 
-    max-height: 70vh;
-  max-height: 70dvh;
-  height: 50vh;
-   top: 0;
-  right: 0;
-  z-index: -1;
-} 
-
-.background-image__down::before{
-   content: '';
-  position: absolute;
-  background-image: url(./images/bg-tablet-pattern.svg); 
-
-  background-position: 3em bottom ;
+  background-position: 4em bottom;
   background-repeat: no-repeat;
   background-size: 120%;
   width: 99%;
-  
+  max-height: 70vh;
+  max-height: 70dvh;
+  height: 50vh;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.background-image__down::before {
+  content: "";
+  position: absolute;
+  background-image: url(./images/bg-tablet-pattern.svg);
+
+  background-position: 3em bottom;
+  background-repeat: no-repeat;
+  background-size: 120%;
+  width: 99%;
+
   max-height: 70vh;
   max-height: 70dvh;
   height: 50vh;
   padding-bottom: 5em;
   z-index: -1;
-  
-} 
-
+}
 
 /* Sales points background image*/
 .sales-points {
   position: relative;
-
 }
 
-   
- 
-@media (min-width: 30em){
+@media (min-width: 30em) {
   .background-image__down::before {
-   background-size: 80%;
-   }
-    @media (min-width: 755px){
-.sales-points .svg-img::before{
-  display: block;
-    content: '';
-    background-image: url(./images/bg-tablet-pattern.svg);
- position: absolute;
- background-repeat: no-repeat;
- background-position: top right;
-z-index: -1;
- 
- height: 100vh;
-
-  
- 
-   } 
-   } 
-   
-}
-@media (min-width: 47em){
-  .background-image__down::before {
-   display: none;
+    background-size: 80%;
   }
-  .background-image::before{
- width: 50%;
- min-height: 95vh; 
-  background-position:  1em bottom;
-  background-repeat: no-repeat;
-   background-size: 120%; 
-  
+  @media (min-width: 755px) {
+    .sales-points .svg-img::before {
+      display: block;
+      content: "";
+      background-image: url(./images/bg-tablet-pattern.svg);
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: top right;
+      z-index: -1;
+
+      height: 100vh;
+    }
+  }
 }
- .sales-points .svg-img::before{
-  display: block;
-  content: '';
- position: absolute;
- background-position: -35em 1em;
- background-size: 120%;
- left: 0;
- bottom: 0;
- top: 40%;
- right:50%;
- 
- }
+@media (min-width: 47em) {
+  .background-image__down::before {
+    display: none;
+  }
+  .background-image::before {
+    width: 50%;
+    min-height: 95vh;
+    background-position: 1em bottom;
+    background-repeat: no-repeat;
+    background-size: 120%;
+  }
+  .sales-points .svg-img::before {
+    display: block;
+    content: "";
+    position: absolute;
+    background-position: -35em 1em;
+    background-size: 120%;
+    left: 0;
+    bottom: 0;
+    top: 40%;
+    right: 50%;
+  }
 }
 
 /* UTILITY CLASSES*/
@@ -791,7 +774,7 @@ z-index: -1;
   padding-block: var(--size-700);
 }
 .margin-top-900 {
-  margin-top:var(--size-900)
+  margin-top: var(--size-900);
 }
 .text-center-sm {
   text-align: center;
