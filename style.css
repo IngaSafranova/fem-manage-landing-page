@@ -329,7 +329,7 @@ background-size: contain;
   position: relative;
   /*to keep text but put background color behind cta:before. Isolate allows to stack elements context*/
   isolation: isolate;
-  text-align: center;
+   text-align:center; 
 }
 /*need to use :before or :after so we can lower the opacity of svg*/
 .cta:before {
@@ -337,12 +337,29 @@ background-size: contain;
   position: absolute;
   z-index: -1;
   inset: 0;
-  background-image: url(./images/bg-tablet-pattern.svg),
+  background-image: 
     url(./images/bg-tablet-pattern.svg);
   opacity: 0.1;
   background-repeat: no-repeat;
-  background-position: -1em -4em, 70rem -40rem;
+  background-position: top right;
+  left: 0;
+  bottom:0;
+  right: 70%;
 }
+@media (min-width: 30em){
+  .cta:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image: url(./images/bg-tablet-pattern.svg),
+      url(./images/bg-tablet-pattern.svg);
+    opacity: 0.1;
+    background-repeat: no-repeat;
+    background-position: -1em -4em, 70rem -40rem;
+  }
+}
+
 /* NUMBERED LIST*/
 
 .numbered-items {
@@ -508,25 +525,20 @@ background-size: contain;
 
   background-position: 4em bottom ;
   background-repeat: no-repeat;
-  background-size: 120%;
-  width: 99%;
-  top: 0;
-  bottom: 100;
-  /* left:0% 70%; */
-  max-height: 70vh;
+   background-size: 120%; 
+   width: 99%; 
+    max-height: 70vh;
   max-height: 70dvh;
   height: 50vh;
-  
-  /* aspect-ratio: 1/.9; */
-  top: 0;
+   top: 0;
   right: 0;
   z-index: -1;
-}
+} 
 
 .background-image__down::before{
-  content: '';
+   content: '';
   position: absolute;
-  background-image: url(./images/bg-tablet-pattern.svg);
+  background-image: url(./images/bg-tablet-pattern.svg); 
 
   background-position: 3em bottom ;
   background-repeat: no-repeat;
@@ -539,37 +551,62 @@ background-size: contain;
   padding-bottom: 5em;
   z-index: -1;
   
-}
-@media (min-width: 47em){
-  .background-image::before{
- width: 45%;
-  /* background-position: 50em bottom;
-  background-repeat: no-repeat;
-  background-size: 40%;
-  border: 1px solid red; */
 } 
-}
-/* Sales pints background image*/
+
+
+/* Sales points background image*/
 .sales-points {
   position: relative;
+
 }
-/* .sales-points::before {
-  content: "";
-  position: absolute;
-  background-image: url(./images/bg-tablet-pattern.svg);
-  background-position: 4em bottom;
-  background-repeat: no-repeat;
-  background-size: 120%;
-  width: 99%;
-  max-height: 70vh;
-  max-height: 70dvh;
-  height: 50vh;
-  z-index: -1;
 
+   
  
-  
-} */
+@media (min-width: 30em){
+  .background-image__down::before {
+   background-size: 80%;
+   }
+    @media (min-width: 755px){
+.sales-points .svg-img::before{
+  display: block;
+    content: '';
+    background-image: url(./images/bg-tablet-pattern.svg);
+ position: absolute;
+ background-repeat: no-repeat;
+ background-position: top right;
+z-index: -1;
+ 
+ height: 100%;
 
+  
+ 
+   } 
+   } 
+   
+}
+@media (min-width: 47em){
+  .background-image__down::before {
+   display: none;
+  }
+  .background-image::before{
+ width: 50%;
+ height: 100%;
+  background-position:  1 bottom;
+  background-repeat: no-repeat;
+}
+ .sales-points .svg-img::before{
+  display: block;
+  content: '';
+ position: absolute;
+ background-position: -35em 1em;
+ left: 0;
+ bottom: 0;
+ top: 40%;
+ right:50%;
+  
+} 
+ 
+}
 
 /* UTILITY CLASSES*/
 
